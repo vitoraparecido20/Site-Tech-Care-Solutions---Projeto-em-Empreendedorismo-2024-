@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Projetor</title>
+    <style>
+        .product-details {
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 16px;
+            border: 1px solid #ddd;
+        }
+        .product-details img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product-details button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .product-details button:hover {
+            background-color: #218838;
+        }
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .navigation-buttons button {
+            background-color: #007bff;
+        }
+        .navigation-buttons button:hover {
+            background-color: #0056b3;
+        }
+        h2{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+<div class="product-details">
+    <img src="miniprojetor.jpg" alt="Mini Projetor">
+    <h1>Mini Projetor</h1>
+    <p><strong>Preço:</strong> R$ 900,00</p>
+    <p><strong>Resolução de Projeção:</strong> HD (720p) ou Full HD (1080p)</p>
+    <p><strong>Brilho:</strong> 200-1000 lúmens</p>
+    <p><strong>Conectividade:</strong>HDMI, USB, Wi-Fi, compatibilidade com smartphones e notebooks </p>
+    <p><strong>Tamanho da Projeção:</strong> 30” a 150” </p>
+    <p><strong>Portabilidade:</strong> Compacto, fácil de transportar</p>
+    <h2>Este mini projetor é ideal para apresentações ou entretenimento em casa. Com projeção de alta definição e conectividade flexível, transforma qualquer ambiente em uma sala de cinema ou local de trabalho. Sua portabilidade facilita o uso em diferentes locais, garantindo praticidade e qualidade visual impressionante.</h2>
+    <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+
+    <!-- Botões de navegação -->
+    <div class="navigation-buttons">
+        <button onclick="window.location.href='cameradeseguranca.html'">Produto Anterior</button>
+        <button onclick="window.location.href='servidores_datacenters.html'">Próximo Produto</button>
+    </div>
+</div>
+
+<script>
+    function adicionarAoCarrinho() {
+        const produto = {
+            nome: "Mini Projetor",
+            preco: 900.00,
+            imagem: "miniprojetor.jpg"
+        };
+        const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+        carrinho.push(produto);
+        localStorage.setItem("carrinho", JSON.stringify(carrinho));
+        alert("Produto adicionado ao carrinho!");
+    }
+</script>
+</body>
+</html>

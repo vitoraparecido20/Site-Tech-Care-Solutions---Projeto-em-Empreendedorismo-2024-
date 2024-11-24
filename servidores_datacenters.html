@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servidores Data Centers</title>
+    <style>
+        .product-details {
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 16px;
+            border: 1px solid #ddd;
+        }
+        .product-details img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product-details button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .product-details button:hover {
+            background-color: #218838;
+        }
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .navigation-buttons button {
+            background-color: #007bff;
+        }
+        .navigation-buttons button:hover {
+            background-color: #0056b3;
+        }
+        h2{
+            background-color: darkmagenta;
+        }
+    </style>
+</head>
+<body>
+<div class="product-details">
+    <img src="servidoresdatacenters.jpg" alt="Servidores Data Centers">
+    <h1>Servidores Data Centers</h1>
+    <p><strong>Preço:</strong> R$ 15.000,00</p>
+    <p><strong>Processador:</strong> Intel Xeon ou AMD EPYC</p>
+    <p><strong>Memória RAM:</strong>64 GB a 1 TB (expansível) </p>
+    <p><strong>Armazenamento:</strong>  SSDs ou HDDs configuráveis em RAID (capacidades de vários TBs)</p>
+    <p><strong>Conectividade:</strong> Ethernet Gigabit, múltiplas portas, suporte para virtualização</p>
+    <p><strong>Refrigeração:</strong> Sistemas avançados para controle térmico, como: saidas de ar quente e ar frio.</p>
+    <h2>Este servidor é projetado para data centers e ambientes corporativos que exigem desempenho ininterrupto. Com processadores poderosos e armazenamento escalável, é ideal para hospedar aplicações críticas, gerenciar bancos de dados ou operar serviços em nuvem. Oferece alta confiabilidade, segurança e suporte para virtualização de ambientes complexos.</h2>
+    <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+
+    <!-- Botões de navegação -->
+    <div class="navigation-buttons">
+        <button onclick="window.location.href='miniprojetor.html'">Produto Anterior</button>
+        <button onclick="window.location.href='totem.html'">Próximo Produto</button>
+    </div>
+</div>
+
+<script>
+    function adicionarAoCarrinho() {
+        const produto = {
+            nome: "Servidores Data Centers",
+            preco: 15000.00,
+            imagem: "servidores_datacenters.jpg"
+        };
+        const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+        carrinho.push(produto);
+        localStorage.setItem("carrinho", JSON.stringify(carrinho));
+        alert("Produto adicionado ao carrinho!");
+    }
+</script>
+</body>
+</html>

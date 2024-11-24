@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolarWinds</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .product-details {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px;
+            border: 1px solid #ddd;
+        }
+        .product-details img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product-details button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .product-details button:hover {
+            background-color: #218838;
+        }
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .navigation-buttons button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .navigation-buttons button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="product-details">
+    <h1>SolarWinds</h1>
+    <img src="solarwinds.jpg" alt="SolarWinds">
+    <p>Plataforma abrangente de monitoramento e gerenciamento de desempenho de rede para otimizar e proteger infraestruturas de TI.</p>
+    <h2>Preço: 1.495,00/por mês</h2>
+    <h3>Características:</h3>
+    <ul>
+        <li>Monitoramento de tráfego de rede</li>
+        <li>Análise de desempenho de aplicações</li>
+        <li>Detecção de falhas em tempo real</li>
+        <li>Integração com ferramentas de TI e relatórios detalhados</li>
+    </ul>
+    <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+
+    <!-- Botões de navegação -->
+    <div class="navigation-buttons">
+        <button onclick="window.location.href='patch_my_pc.html'">Produto Anterior</button>
+        <button onclick="window.location.href='veeam_backupereplication.html'">Próximo Produto</button>
+    </div>
+</div>
+
+<script>
+    function adicionarAoCarrinho() {
+        const produto = {
+            nome: "SolarWinds",
+            preco: "Sob consulta",
+            imagem: "solarwinds.jpg"
+        };
+        const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+        carrinho.push(produto);
+        localStorage.setItem("carrinho", JSON.stringify(carrinho));
+        alert("Produto adicionado ao carrinho!");
+    }
+</script>
+</body>
+</html>

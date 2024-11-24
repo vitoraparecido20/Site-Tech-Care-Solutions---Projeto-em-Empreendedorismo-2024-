@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SonicWall</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .product-details {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px;
+            border: 1px solid #ddd;
+        }
+        .product-details img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product-details button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .product-details button:hover {
+            background-color: #218838;
+        }
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .navigation-buttons button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .navigation-buttons button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="product-details">
+    <h1>SonicWall</h1>
+    <img src="sonicwall.jpg" alt="SonicWall">
+    <p>Firewall de última geração que oferece proteção contra ameaças cibernéticas e controle avançado de aplicativos para redes corporativas.</p>
+    <h2>Preço: R$ 500/por ano</h2>
+    <h3>Características:</h3>
+    <ul>
+        <li>Proteção contra ameaças em tempo real</li>
+        <li>Filtragem de conteúdo e controle de aplicativos</li>
+        <li>VPN segura para acesso remoto</li>
+        <li>Gerenciamento centralizado e relatórios</li>
+    </ul>
+    <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+
+    <!-- Botões de navegação -->
+    <div class="navigation-buttons">
+        <button onclick="window.location.href='googleworkspace.html'">Produto Anterior</button>
+        <button onclick="window.location.href='connectwise.html'">Próximo Produto</button>
+    </div>
+</div>
+
+<script>
+    function adicionarAoCarrinho() {
+        const produto = {
+            nome: "SonicWall",
+            preco: "Sob consulta",
+            imagem: "sonicwall.jpg"
+        };
+        const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+        carrinho.push(produto);
+        localStorage.setItem("carrinho", JSON.stringify(carrinho));
+        alert("Produto adicionado ao carrinho!");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressora</title>
+    <style>
+        .product-details {
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 16px;
+            border: 1px solid #ddd;
+        }
+        .product-details img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product-details button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .product-details button:hover {
+            background-color: #218838;
+        }
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .navigation-buttons button {
+            background-color: #007bff;
+        }
+        .navigation-buttons button:hover {
+            background-color: #0056b3;
+        }
+        h2{
+       background-color: #007bff;
+        }
+    </style>
+</head>
+<body>
+<div class="product-details">
+    <img src="impressora.jpg" alt="Impressora">
+    <h1>Impressora Multifuncional</h1>
+    <p><strong>Preço:</strong> R$ 1.200,00</p>
+    <p><strong>Funções:</strong>  Impressão, cópia e digitalização</p>
+    <p><strong>Tipo de Impressão:</strong>Jato de tinta colorida ou laser monocromática </p>
+    <p><strong>Conectividade:</strong> USB e Wi-Fi (dependendo do modelo) </p>
+    <p><strong>Resolução de Impressão:</strong> De até 1200 x 1200 dpi</p>
+    <p><strong>Velocidade de Impressão:</strong> Aproximadamente 10 a 20 páginas por minuto</p>
+    <p><strong>Capacidade da Bandeja:</strong>Suporte para 100 a 150 folhas </p>
+    <h2>Esta impressora multifuncional é ideal para uso doméstico ou em pequenos escritórios. Com recursos de impressão, cópia e digitalização integrados, oferece versatilidade e praticidade para diversas tarefas do dia a dia. Sua conectividade permite fácil integração com computadores e dispositivos móveis, proporcionando mais flexibilidade. A qualidade de impressão, com resolução de até 1200 dpi, garante documentos nítidos e gráficos coloridos bem definidos. É uma solução confiável para quem precisa de desempenho consistente a um ótimo custo-benefício.
+
+    </h2>
+    <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+
+    <!-- Botões de navegação -->
+    <div class="navigation-buttons">
+        <button onclick="window.location.href='pccpu.html'">Produto Anterior</button>
+        <button onclick="window.location.href='cameradeseguranca.html'">Próximo Produto</button>
+    </div>
+</div>
+
+<script>
+    function adicionarAoCarrinho() {
+        const produto = {
+            nome: "Impressora",
+            preco: 1200.00,
+            imagem: "impressora.jpg"
+        };
+        const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+        carrinho.push(produto);
+        localStorage.setItem("carrinho", JSON.stringify(carrinho));
+        alert("Produto adicionado ao carrinho!");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Totem</title>
+    <style>
+        .product-details {
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 16px;
+            border: 1px solid #ddd;
+        }
+        .product-details img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product-details button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .product-details button:hover {
+            background-color: #218838;
+        }
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .navigation-buttons button {
+            background-color: #007bff;
+        }
+        .navigation-buttons button:hover {
+            background-color: #0056b3;
+        }
+        h2{
+            background-color: deeppink;
+        }
+    </style>
+</head>
+<body>
+<div class="product-details">
+    <img src="totem.jpg" alt="Totem">
+    <h1>Totem</h1>
+    <p><strong>Preço:</strong> R$ 3.200,00</p>
+    <p><strong>Funções:</strong> Atendimento ao cliente, consultas, pagamentos</p>
+    <p><strong>Tela:</strong> Touchscreen capacitiva (21” a 32”)</p>
+    <p><strong>Conectividade: </strong> Wi-Fi, Ethernet</p>
+    <p><strong>Sistemas Compatíveis: </strong> Windows ou Android</p>
+    <h2>Este totem de autoatendimento é ideal para otimizar o atendimento em estabelecimentos comerciais, hospitais e instituições públicas. Com uma tela touchscreen intuitiva, permite ao usuário realizar consultas, pagamentos ou solicitar serviços de forma autônoma. Reduz filas e melhora a experiência do cliente, proporcionando praticidade e eficiência no atendimento.
+
+    </h2>
+    <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+
+    <!-- Botões de navegação -->
+    <div class="navigation-buttons">
+        <button onclick="window.location.href='servidores_datacenters.html'">Produto Anterior</button>
+    </div>
+</div>
+
+<script>
+    function adicionarAoCarrinho() {
+        const produto = {
+            nome: "Totem",
+            preco: 3200.00,
+            imagem: "totem.jpg"
+        };
+        const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+        carrinho.push(produto);
+        localStorage.setItem("carrinho", JSON.stringify(carrinho));
+        alert("Produto adicionado ao carrinho!");
+    }
+</script>
+</body>
+</html>

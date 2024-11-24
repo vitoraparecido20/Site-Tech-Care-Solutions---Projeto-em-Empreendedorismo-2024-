@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câmera de Segurança</title>
+    <style>
+        .product-details {
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 16px;
+            border: 1px solid #ddd;
+        }
+        .product-details img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product-details button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .product-details button:hover {
+            background-color: #218838;
+        }
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .navigation-buttons button {
+            background-color: #007bff;
+        }
+        .navigation-buttons button:hover {
+            background-color: #0056b3;
+        }
+        h2{
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+<div class="product-details">
+    <img src="cameradeseguranca.jpg" alt="Câmera de Segurança">
+    <h1>Câmera de Segurança</h1>
+    <p><strong>Preço:</strong> R$ 600,00</p>
+    <p><strong>Resolução:</strong> Full HD (1080p) ou 4K (dependendo do modelo)</p>
+    <p><strong>Conectividade:</strong> Wi-Fi, Ethernet, acesso remoto via aplicativo</p>
+    <p><strong>Armazenamento:</strong> Nuvem ou cartão microSD</p>
+    <p><strong>Visão Noturna:</strong> Infravermelho ou modo colorido avançado</p>
+    <h2>Esta câmera de segurança é ideal para residências e empresas, proporcionando monitoramento em tempo real com alta resolução. Com conectividade remota, permite o acesso às imagens de qualquer lugar, garantindo segurança constante. A detecção de movimento integrada e a visão noturna oferecem cobertura 24 horas por dia, sendo uma solução confiável para proteção de ambientes internos e externos.</h2>
+    <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+
+    <!-- Botões de navegação -->
+    <div class="navigation-buttons">
+        <button onclick="window.location.href='impressora.html'">Produto Anterior</button>
+        <button onclick="window.location.href='miniprojetor.html'">Próximo Produto</button>
+    </div>
+</div>
+
+<script>
+    function adicionarAoCarrinho() {
+        const produto = {
+            nome: "Câmera de Segurança",
+            preco: 600.00,
+            imagem: "cameradeseguranca.jpg"
+        };
+        const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+        carrinho.push(produto);
+        localStorage.setItem("carrinho", JSON.stringify(carrinho));
+        alert("Produto adicionado ao carrinho!");
+    }
+</script>
+</body>
+</html>

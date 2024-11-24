@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veeam Backup & Replication</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .product-details {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px;
+            border: 1px solid #ddd;
+        }
+        .product-details img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product-details button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .product-details button:hover {
+            background-color: #218838;
+        }
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .navigation-buttons button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .navigation-buttons button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="product-details">
+    <h1>Veeam Backup & Replication</h1>
+    <img src="veeam_backupereplication.jpg" alt="Veeam Backup & Replication">
+    <p>Proteção de dados e recuperação avançada para ambientes físicos e virtuais, oferecendo recuperação rápida e fácil.</p>
+    <h2>Preço: 2.730,00/por ano</h2>
+    <h3>Características:</h3>
+    <ul>
+        <li>Backup automatizado e replicação</li>
+        <li>Restauração instantânea de VMs e arquivos</li>
+        <li>Suporte para VMware, Hyper-V e servidores físicos</li>
+        <li>Monitoramento e relatórios de status</li>
+    </ul>
+    <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+
+    <!-- Botões de navegação -->
+    <div class="navigation-buttons">
+        <button onclick="window.location.href='spiceworks.html'">Produto Anterior</button>
+        <button onclick="window.location.href='manageengine.html'">Próximo Produto</button>
+    </div>
+</div>
+
+<script>
+    function adicionarAoCarrinho() {
+        const produto = {
+            nome: "Veeam Backup & Replication",
+            preco: "Sob consulta",
+            imagem: "veeam_backupereplication.jpg"
+        };
+        const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+        carrinho.push(produto);
+        localStorage.setItem("carrinho", JSON.stringify(carrinho));
+        alert("Produto adicionado ao carrinho!");
+    }
+</script>
+</body>
+</html>
